@@ -15,7 +15,7 @@ Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-N
 Для получения полного текста лицензии посетите:
 https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
 
-Автор проекта: [Твоё имя или ник]
-Дата начала: [дата]
+Автор проекта: Vladimir Khlebnikov (Владимир Хлебников)
+Дата начала: 28.05.2025
 
 Все права, не предоставленные в рамках данной лицензии, сохраняются за автором.

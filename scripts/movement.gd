@@ -1,18 +1,23 @@
-extends MeshInstance3D
+extends CharacterBody3D
 
-@export var speed = 5.0
+@export var speed: float = 5.0
+@export var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _physics_process(delta: float):
-	var input_vector = Vector3.ZERO
+	var dir = Vector3.ZERO
 	
 	if Input.is_action_pressed("ui_up"):
-		input_vector.z -= 1
+		dir.z -= 1
 	if Input.is_action_pressed("ui_down"):
-		input_vector.z += 1
+		dir.z += 1
 	if Input.is_action_pressed("ui_left"):
-		input_vector.x -= 1 
+		dir.x -= 1 
 	if Input.is_action_pressed("ui_right"):
-		input_vector.x += 1
+		dir.x += 1
 		
-	input_vector = input_vector.normalized()
-	translate(input_vector * speed * delta)
+	dir = Vector3.ZERO if dir == Vector3.ZERO else dir.normalized() * speed
+	velocity.x = dir.x
+	velocity.z = dir.z
+	velocity.y -= gravity * delta
+	
+	move_and_slide()

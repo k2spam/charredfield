@@ -14,3 +14,7 @@ config/name="Charredfield"
 run/main_scene="uid://brryr11rw3fpa"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+ResourceManager="*res://scripts/ResourceManager.gd"

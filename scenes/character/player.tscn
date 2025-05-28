@@ -1,13 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddcs6iw01x0aa"]
+[gd_scene load_steps=5 format=3 uid="uid://byugkmrntt0it"]
 
 [ext_resource type="Script" uid="uid://cisght27gh35n" path="res://scripts/movement.gd" id="1_3vyb7"]
+[ext_resource type="Material" uid="uid://ds33un8kqr5qf" path="res://materials/player.tres" id="2_tum32"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_sgp6g"]
+[sub_resource type="BoxMesh" id="BoxMesh_o5qli"]
 
-[node name="Player" type="MeshInstance3D"]
-mesh = SubResource("BoxMesh_sgp6g")
+[sub_resource type="BoxShape3D" id="BoxShape3D_0wfyh"]
+
+[node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_3vyb7")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.526825, 0)
+material_override = ExtResource("2_tum32")
+mesh = SubResource("BoxMesh_o5qli")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5269, 0)
+shape = SubResource("BoxShape3D_0wfyh")
+
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.586245, 0.810134, 0, -0.810134, 0.586245, 0, 4.89216, 2.66673)
-current = true
+transform = Transform3D(1, 0, 0, 0, 0.638365, 0.769734, 0, -0.769734, 0.638365, 0, 3.95512, 2.37012)
